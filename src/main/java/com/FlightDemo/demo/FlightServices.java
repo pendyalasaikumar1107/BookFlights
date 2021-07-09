@@ -1,0 +1,28 @@
+package com.FlightDemo.demo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+//import org.springframework.stereotype.Service;
+
+
+@Service
+public class FlightServices {
+
+	@Autowired
+	FlightRespository flightrepository;
+	//getting all books record by using the method findaAll() of CrudRepository
+	public List<Flights> getAllFlights() 
+	{
+	List<Flights> flights = new ArrayList<Flights>();
+	flightrepository.findAll().forEach(flights1 -> flights.add(flights1));
+	return flights;
+	}
+	
+	public void saveOrUpdate(Flights flights) {
+		// TODO Auto-generated method stub
+	flightrepository.save(flights);
+	}
+}
