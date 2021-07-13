@@ -1,4 +1,4 @@
-package com.FlightDemo.demo;
+package com.FlightDemo.demo.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
