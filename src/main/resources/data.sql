@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS Travellers;
+DROP TABLE IF EXISTS Orders;
 
 CREATE TABLE Travellers(travellerid INT,flightid INT, numberoftravellers INT, travellername VARCHAR(200));
 
@@ -9,3 +10,7 @@ VALUES(10001,20001,4,'person1');
 CREATE TABLE IF NOT EXISTS  Cart ( flightid INT, cartid INT, airwaysname VARCHAR(200), source VARCHAR(200),destination VARCHAR(200),seats INT); 
 INSERT INTO Cart( flightid, cartid, airwaysname, source,destination ,seats )
 VALUES(1,2,'SAS','Chennai','Dubai',5);
+
+CREATE TABLE Orders(orderid INT,flightid INT,travellerid INT,Airwaysname VARCHAR(200),cartid INT,numberoftravellers INT, travellername VARCHAR(200),source VARCHAR(200),destination VARCHAR(200));
+INSERT INTO Orders(orderid,flightid,travellerid,Airwaysname,cartid,numberoftravellers,travellername,source,destination)
+VALUES(1,20001,101,'sas',2,4,'person1','dubai','chennai');
